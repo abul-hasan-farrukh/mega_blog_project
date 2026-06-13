@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+//this store will track all the authentications
 const initialState = {
     status : false,
     userData: null
