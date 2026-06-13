@@ -82,7 +82,7 @@ Pages like Add Post and Edit Post are wrapped with `authentication={true}`, mean
 
 ## 🏠 The Root Layout — `App.jsx`
 
-Every page in your app shares the same layout:
+Every page in the app shares the same layout:
 
 ```
 ┌─────────────────────┐
@@ -115,7 +115,7 @@ const conf = {
 }
 ```
 
-**Why this file exists:** Instead of writing your secret keys directly in every file, you store them in `.env` and read them here. This one `conf` object is then imported wherever needed. If a key changes, you update it in one place only.
+**Why this file exists:** Instead of writing secret keys directly in every file, I have stored them in `.env` and read them here. This one `conf` object is then imported wherever needed. If a key changes, I update it in one place only.
 
 ---
 
@@ -135,7 +135,7 @@ At the bottom, it creates **one single instance** of the class:
 const authService = new AuthService();
 export default authService;
 ```
-This means the entire app shares one authService object — you never create it again.
+This means the entire app shares one authService object — no need to create it again.
 
 ---
 
@@ -161,7 +161,7 @@ This file handles everything related to blog posts and images. It also uses a cl
 | `deleteFile()` | Deletes an image from Storage |
 | `getFilePreview()` | Returns a URL so the image can be shown in `<img>` tag |
 
-Notice that the `slug` (URL-friendly title like `my-first-post`) is used as the **document ID** in the database. That's why you can fetch a post just from the URL.
+Notice that the `slug` (URL-friendly title like `my-first-post`) is used as the **document ID** in the database. That's why I can fetch a post just from the URL.
 
 ---
 
@@ -240,7 +240,7 @@ Wraps the TinyMCE editor. It uses React Hook Form's `<Controller>` component to 
 ---
 
 ### `Input.jsx`, `Button.jsx`, `Select.jsx` — Reusable UI Components
-These are generic components used throughout the app so you don't repeat the same styling everywhere.
+These are generic components used throughout the app so I don't have to repeat the same styling everywhere.
 
 `Input.jsx` uses `React.forwardRef` — this is needed because React Hook Form needs direct access to the input element using a `ref`.
 
@@ -253,7 +253,7 @@ import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Button from './components/Button'
 ```
-You can write:
+I have written:
 ```js
 import { Header, Footer, Button } from './components'
 ```
